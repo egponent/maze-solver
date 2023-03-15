@@ -53,7 +53,7 @@ class Main {
       currY = posY.peek();
 
       if(maze[currX][currY] == '$') {
-        // find the end
+        // check if end
         break;
       }
 
@@ -94,10 +94,10 @@ class Main {
       solutionY.push(posY.pop());
     }
 
-    // Mixed up X and Y so just swapped them here.
+      //print
 
     while(!solutionX.empty() && !solutionY.empty()) {
-      System.out.println("[" + solutionY.pop() + "," + solutionX.pop() + "]");
+      System.out.println("[" + solutionX.pop() + "," + solutionY.pop() + "]");
     }
   }
 }
