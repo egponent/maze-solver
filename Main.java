@@ -10,11 +10,8 @@ class Main {
     Scanner file = new Scanner(new BufferedReader(new FileReader("maze.txt")));
     int rows = 0;
     int cols = 0;
-    int lastX;
-    int lastY;
     int currX;
     int currY;
-    boolean solved = false;
 
     Stack<Integer> posX = new Stack<Integer>();
     Stack<Integer> posY = new Stack<Integer>();
@@ -57,11 +54,10 @@ class Main {
 
       if(maze[currX][currY] == '$') {
         // find the end
-        solved = true;
         break;
       }
 
-      // Move to the next unvisited neighbor
+      // move to next unvisited neighbor
       if(currX > 0 && maze[currX-1][currY] != '#' && !visited[currX-1][currY]) {
         posX.push(currX-1);
         posY.push(currY);
